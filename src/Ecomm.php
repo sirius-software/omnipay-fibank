@@ -288,6 +288,7 @@ class Ecomm
             'description' => $description,
             'biller_client_id' => $recc_pmnt_id,
             'language' => $language,
+            'custom_sc' => '1',
         ];
 
         return $this->sendRequest($params);
