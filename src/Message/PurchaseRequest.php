@@ -30,11 +30,11 @@ class PurchaseRequest extends AbstractRequest
      */
     public function sendData($data)
     {
-        if($this->fibank->useDMS()) {
-            $response = $this->fibank->purchaseDMSRecurringPayment($data['amount'], $data['description'], $data['recc_pmnt_id'], $data['language']);
-        } else {
+//        if($this->fibank->useDMS()) {
+//            $response = $this->fibank->purchaseDMSRecurringPayment($data['amount'], $data['description'], $data['recc_pmnt_id'], $data['language']);
+//        } else {
             $response = $this->fibank->purchaseRecurringPayment($data['amount'], $data['description'], $data['recc_pmnt_id'], $data['language']);
-        }
+//        }
 
         return $this->createResponse($response, null, [
             '108' => 'Merchant communication with cardholder has to be done',
