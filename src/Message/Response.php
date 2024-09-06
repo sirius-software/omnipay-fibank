@@ -105,6 +105,7 @@ class Response extends AbstractResponse implements RedirectResponseInterface
         }
         $card_number = $this->data['CARD_NUMBER'];
         $res = new \stdClass();
+        $res->cardNumber = $card_number;
         $res->imageUrl = '';
         $res->last4 = '';
         $res->cardType = 'Unknown';
