@@ -30,7 +30,8 @@ class AuthorizeRequest extends AbstractRequest
      */
     public function sendData($data)
     {
-        $response = $this->fibank->createAuthorizationRequest($data['amount'], $data['description'], $data['cardReference'], $data['language']);
+//        $response = $this->fibank->createAuthorizationRequest($data['amount'], $data['description'], $data['cardReference'], $data['language']);
+        $response = $this->fibank->purchaseRecurringPayment($data['amount'], $data['description'], $data['cardReference'], $data['language']);
 
         return $this->createResponse($response);
     }
